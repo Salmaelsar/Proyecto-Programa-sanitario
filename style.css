@@ -1,0 +1,127 @@
+
+nav li a:hover {
+    background: #688495;
+    text-decoration: none;
+}
+header,
+footer {
+    background: #50b3a2;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    background: #50b3a2;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #429488;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+}
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+form input,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+form textarea {
+    resize: vertical;
+    min-height: 100px   ;
+}
+
+footer form {
+    background: #ffffff
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/*Tipografía general*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:#f4f6f8;
+    color: #1f2a37;
+    line-height: 1.6;
+}
+
+    /*Títulos*/
+    h1, h2 {
+        margin: 0 0 10px 0;
+        font-weight: 700;
+    }
+
+
+
+/* Texto dentro de header/footer */
+header p,
+footer p {
+    margin: 8px 0 0 0;
+    opacity: 0.95;
+}
+
+/* Contenido principal más legible */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 16px;
+}
+
+/* Secciones con separación */
+section {
+    margin: 18px 0;
+}
+
+/* Footer un poco más “elegante” */
+footer {
+    padding: 24px 16px;
+}
+
+/* Responsive: pantallas pequeñas (móvil) */
+@media (max-width: 600px) {
+
+    header, footer {
+        padding: 16px 12px;
+    }
+
+    main {
+        margin: 12px auto;
+        padding: 0 12px;
+    }
+
+    nav li {
+        display: block;
+        margin: 8px 0;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px 12px;
+    }
+
+    footer form {
+        padding: 16px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+}
