@@ -48,5 +48,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     form.reset();
+
+    // ===============================
+// REGISTRO DE PACIENTES
+// ===============================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const patientForm = document.getElementById("patientForm");
+  const patientList = document.getElementById("patientList");
+
+  if (!patientForm || !patientList) return;
+
+  let patients = JSON.parse(localStorage.getItem("patients")) || [];
+
+  function savePatients() {
+    localStorage.setItem("patients", JSON.stringify(patients));
+  }
+
+  function renderPatients() {
+    patientList.innerHTML = "";
+
+    if (patients.length === 0) {
+      patientList.innerHTML = "<p>No hay pacientes registrados.</p>";
+      return;
+    }
+
+    patients.forEach((patient, index) => {
+      const div = document.createElement("div");
+      div.classList.add("patient-card");
+
+      div.innerHTML = `
+        <strong>${patient.name}</strong><br>
+        Edad: ${patient.age}<br>
+        Cita: ${patient.date}<br>
+        <button data-index="${index}">Eliminar</button>
+      `;
+
+      patientList.appendChild(div);
+    });
+  }
+
+  patientForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("patientName").value.trim();
+    const age = document.getElementById("patientAge").value;
+    const date = document.getElementById("patientDate").value;
+
+    if (!name || !age || !date) return;
+
+    patients.push({ name, age, date });
+    savePatients();
+    renderPatients();
+    patientForm.reset();
+  });
+
+  patientList.addEventListener("click", (e) => {
+    if (e.target.tagName === "BUTTON") {
+      const index = e.target.dataset.index;
+      patients.splice(index, 1);
+      savePatients();
+      renderPatients();
+    }
+  });
+
+  // Mostrar pacientes al cargar
+  renderPatients();
+});
+
+
   });
 });

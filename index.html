@@ -40,6 +40,26 @@
             <h2>Actividades</h2>
             <p>Nuestras actividades incluyen talleres, campañas de vacunación, y charlas informativas sobre salud.</p>
         </section>
+
+        <section id="pacientes">
+  <h2>Registro de Pacientes</h2>
+
+  <form id="patientForm">
+    <label for="patientName">Nombre del paciente</label>
+    <input type="text" id="patientName" required>
+
+    <label for="patientAge">Edad</label>
+    <input type="number" id="patientAge" min="0" required>
+
+    <label for="patientDate">Fecha de cita</label>
+    <input type="date" id="patientDate" required>
+
+    <button type="submit">Registrar paciente</button>
+  </form>
+
+  <div id="patientList"></div>
+</section>
+
     </main>
     <footer id="contacto">
         <h2>Contacto</h2>
@@ -63,3 +83,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
